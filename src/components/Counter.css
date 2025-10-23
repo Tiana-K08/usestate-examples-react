@@ -1,0 +1,30 @@
+.counter-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 60px;
+  background-color: #fcfc45;
+  border: 2px solid #bc9104;
+  border-radius: 10px;
+}
+
+.result > span {
+  font-size: 24px;
+}
+
+.btn-container > button {
+  margin: 0 10px;
+  padding: 10px;
+  background-color: #38f938;
+  border-radius: 5px;
+}
