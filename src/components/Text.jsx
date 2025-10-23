@@ -3,7 +3,8 @@ import './Text.css';
 import Button from './Button.jsx';
 
 function Text() {
-  const [textColor, setTextColor] = useState({ color: 'black' });
+  const initialColor = { color: 'black' };
+  const [textColor, setTextColor] = useState(initialColor);
 
   const handleTextRed = () => {
     setTextColor({ color: '#de0202' });
@@ -15,6 +16,10 @@ function Text() {
 
   const handleTextGreen = () => {
     setTextColor({ color: '#05aa2b' });
+  };
+
+  const handleResetColor = () => {
+    setTextColor(initialColor);
   };
 
   return (
@@ -32,6 +37,9 @@ function Text() {
         <Button onClick={handleTextRed} label="Text Red" />
         <Button onClick={handleTextBlue} label="Text Blue" />
         <Button onClick={handleTextGreen} label="Text Green" />
+      </div>
+      <div className="btn-container">
+        <Button onClick={handleResetColor} label="Reset Color" />
       </div>
     </div>
   );
