@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Counter.css';
+import Button from './Button.jsx';
 
 function Counter() {
   const [counter, setCounter] = useState(0);
@@ -24,8 +25,8 @@ function Counter() {
         <span>{counter}</span>
       </div>
       <div className="btn-container">
-        <button onClick={handleIncrease}>Increase +</button>
-        <button onClick={handleDecrease}>Decrease -</button>
+        <Button onClick={handleIncrease} label="Increase +" />
+        <Button onClick={handleDecrease} label="Decrease -" />
       </div>
     </div>
   );

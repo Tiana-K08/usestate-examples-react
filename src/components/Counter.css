@@ -21,10 +21,3 @@
 .result > span {
   font-size: 24px;
 }
-
-.btn-container > button {
-  margin: 0 10px;
-  padding: 10px;
-  background-color: #38f938;
-  border-radius: 5px;
-}
