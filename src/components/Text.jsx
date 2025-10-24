@@ -10,21 +10,11 @@ function Text() {
 
   const [textColor, setTextColor] = useState(initialColor);
 
-  const handleTextRed = () => {
-    setTextColor(redColor);
-  };
-
-  const handleTextBlue = () => {
-    setTextColor(blueColor);
-  };
-
-  const handleTextGreen = () => {
-    setTextColor(greenColor);
-  };
-
-  const handleResetColor = () => {
-    setTextColor(initialColor);
-  };
+  const buttons = [
+    { color: redColor, label: 'Text Red' },
+    { color: blueColor, label: 'Text Blue' },
+    { color: greenColor, label: 'Text Green' },
+  ];
 
   return (
     <div className="text-wrapper">
@@ -38,24 +28,22 @@ function Text() {
         rerum, saepe velit ex.
       </p>
       <div className="btn-container">
-        <Button
-          onClick={handleTextRed}
-          label="Text Red"
-          activeColor={textColor === redColor ? redColor : initialColor}
-        />
-        <Button
-          onClick={handleTextBlue}
-          label="Text Blue"
-          activeColor={textColor === blueColor ? blueColor : initialColor}
-        />
-        <Button
-          onClick={handleTextGreen}
-          label="Text Green"
-          activeColor={textColor === greenColor ? greenColor : initialColor}
-        />
+        {buttons.map((button) => (
+          <Button
+            key={button.color}
+            onClick={() => setTextColor(button.color)}
+            label={button.label}
+            activeColor={
+              textColor === button.color ? button.color : initialColor
+            }
+          />
+        ))}
       </div>
       <div className="btn-container">
-        <Button onClick={handleResetColor} label="Reset Color" />
+        <Button
+          onClick={() => setTextColor(initialColor)}
+          label="Reset Color"
+        />
       </div>
     </div>
   );
